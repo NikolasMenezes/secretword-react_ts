@@ -1,0 +1,28 @@
+.gameOver * {
+  font-weight: bold;
+}
+.gameOver h2 {
+  margin: 0;
+  margin-top: 2rem;
+  font-size: 3.5rem;
+  font-weight: 400 ;
+}
+
+.gameOver .returnStart {
+  font-size: 1.3rem;
+  transition: .3s;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.gameOver p {
+  font-size: 1.3rem;
+}
+
+.gameOver .returnStart:hover {
+  text-decoration: underline;
+}
+
+.score {
+  color: yellow;
+}
