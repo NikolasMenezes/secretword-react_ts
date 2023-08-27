@@ -47,7 +47,7 @@ function App() {
     const { word, category } = pickCategoryWord();
     let letters = word.split("");
 
-    letters = letters.map((letter) => {
+    letters = letters.map((letter:string) => {
       return letter.toLowerCase();
     });
 
@@ -61,6 +61,9 @@ function App() {
   const verifyLetter = (letter: string) => {
 
     const normalized = letter.toLowerCase()
+    const uniqueNormalized = [...new Set(letters)];
+
+    console.log(uniqueNormalized)
 
     if (wrongLetters.includes(normalized) || guessedLetters.includes(normalized)) {
       return
@@ -69,7 +72,7 @@ function App() {
     if (letters.includes(normalized)) {
       let actualGuessedLetter = [...guessedLetters, normalized]
       console.log(actualGuessedLetter.length)
-      if (actualGuessedLetter.length === letters.length) {
+      if (actualGuessedLetter.length === uniqueNormalized.length) {
         setScore(score += 100)
         setGameStage(stages[2].name)
       }
